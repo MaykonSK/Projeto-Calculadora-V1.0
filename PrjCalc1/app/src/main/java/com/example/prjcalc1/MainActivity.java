@@ -34,6 +34,7 @@ public class MainActivity extends AppCompatActivity {
         Button btnMR = findViewById(R.id.btnMR);
         Button btnMC = findViewById(R.id.btnMC);
         TextView txtArmazenamento = findViewById(R.id.txtArmazenamento);
+        Button btnFinalizar = findViewById(R.id.btnFinalizar);
 
         btnSoma.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -115,6 +116,13 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Memoria = 0.0;
                 txtArmazenamento.setText(Memoria.toString());
+            }
+        });
+
+        btnFinalizar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                System.exit(0);
             }
         });
 
