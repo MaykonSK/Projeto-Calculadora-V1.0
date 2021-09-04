@@ -13,6 +13,7 @@ public class MainActivity extends AppCompatActivity {
     Double vl1 = 0.0;
     Double vl2 = 0.0;
     Double vResultado = 0.0;
+    Double Memoria = 0.0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +27,13 @@ public class MainActivity extends AppCompatActivity {
         Button btnDividir = findViewById(R.id.btnDividir);
         Button btnMulti = findViewById(R.id.btnMulti);
         TextView txtResultado = findViewById(R.id.txtResultado);
+
+        //Aula 2 - Segunda parte
+        Button btnMMais = findViewById(R.id.btnMMais);
+        Button btnMMenos = findViewById(R.id.btnMMenos);
+        Button btnMR = findViewById(R.id.btnMR);
+        Button btnMC = findViewById(R.id.btnMC);
+        TextView txtArmazenamento = findViewById(R.id.txtArmazenamento);
 
         btnSoma.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -72,6 +80,41 @@ public class MainActivity extends AppCompatActivity {
                 vResultado = vl1 * vl2;
 
                 txtResultado.setText(vResultado.toString());
+            }
+        });
+
+        btnMMais.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //vl1 = Double.parseDouble(editNum1.getText().toString());
+                Memoria = vResultado + Memoria;
+
+                txtArmazenamento.setText(Memoria.toString());
+            }
+        });
+
+        btnMMenos.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //vl1 = Double.parseDouble(editNum1.getText().toString());
+                Memoria = Memoria - vResultado;
+
+                txtArmazenamento.setText(Memoria.toString());
+            }
+        });
+
+        btnMR.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                editNum1.setText(Memoria.toString());
+            }
+        });
+
+        btnMC.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Memoria = 0.0;
+                txtArmazenamento.setText(Memoria.toString());
             }
         });
 
